@@ -1,0 +1,242 @@
+/* 우리WON뱅킹 미니 - 공통 스타일 */
+body {
+  margin: 0;
+  background: #f7f9fc;
+  font-family: system-ui, -apple-system, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  color: #1a1a1a;
+}
+
+#root {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 28px 16px 60px;
+  box-sizing: border-box;
+}
+
+.panel {
+  margin-bottom: 24px;
+}
+
+.panel h2 {
+  margin: 0 0 10px;
+  color: #374151;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+h1 {
+  color: #1668dc;
+  font-size: 20px;
+  margin: 0 0 4px;
+}
+
+.clock {
+  display: block;
+  margin-bottom: 20px;
+  color: #1668dc;
+  font-size: 14px;
+}
+
+.account-actions {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.account-actions .action-button {
+  flex: 0 0 auto;
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+.total-asset-panel {
+  padding: 20px 24px;
+  border: 1px solid #bfdbfe;
+  border-radius: 16px;
+  background: #eff6ff;
+}
+
+.total-asset-panel h2 {
+  color: #2563eb;
+  font-size: 16px;
+}
+
+.total-asset-value {
+  margin: 0;
+  color: #2563eb;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e7edf5;
+  box-shadow: 0 4px 14px rgba(31, 65, 114, 0.07);
+  padding: 20px;
+  margin-bottom: 12px;
+}
+
+.balance {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.muted {
+  color: #8b8f98;
+  font-size: 13px;
+}
+
+.transaction-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 20px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.transaction-list {
+  overflow: hidden;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e7edf5;
+  box-shadow: 0 4px 14px rgba(31, 65, 114, 0.07);
+}
+
+.transaction-empty {
+  margin: 0;
+  padding: 24px 20px;
+  color: #8b8f98;
+  font-size: 13px;
+  text-align: center;
+}
+
+.transaction-row:last-child {
+  border-bottom: 0;
+}
+
+.transaction-summary {
+  margin: 8px 4px 12px;
+  color: #8b8f98;
+  font-size: 12px;
+  text-align: left;
+}
+
+.transaction-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.category-filters {
+  padding-top: 10px;
+  border-top: 1px solid #e5eaf2;
+}
+
+.chip {
+  border: 1px solid #dbe3ee;
+  border-radius: 8px;
+  padding: 6px 12px;
+  background: #ffffff;
+  color: #6b7280;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+
+.chip:hover {
+  border-color: #93b4ed;
+  background: #f7faff;
+  color: #2563eb;
+}
+
+.chip.on {
+  border-color: #2563eb;
+  background: #eff6ff;
+  color: #2563eb;
+  font-weight: 700;
+}
+
+.transaction-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.transaction-info span {
+  color: #8b8f98;
+  font-size: 13px;
+}
+
+.transaction-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.transaction-category::after {
+  content: "·";
+  margin-left: 6px;
+}
+
+.transaction-amount {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.transaction-time {
+  color: #8b8f98;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.deposit {
+  color: #16803c;
+}
+
+.withdrawal {
+  color: #d22f2f;
+}
+
+.action-button {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #dbe3ee;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #2563eb;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.action-button:hover:not(:disabled) {
+  border-color: #93b4ed;
+  background-color: #f7faff;
+}
+
+.action-button:focus-visible,
+.chip:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.2);
+  outline-offset: 2px;
+}
+
+.action-button:disabled {
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.deposit-button {
+  display: block;
+  width: max-content;
+  margin-left: auto;
+}
+
