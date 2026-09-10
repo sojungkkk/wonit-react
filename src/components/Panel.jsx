@@ -9,7 +9,7 @@ function Panel({ title, children }) {
   return (
     <section className="panel">
       {/* 중앙방송 중이라 모든 panel에 전달됨 */}
-      <h2>{ title === '내 계좌' ? `${user.name}의 계좌` : title } </h2>
+      <h2>{ title === '내 계좌' ? `${user.name}님의 계좌` : title } </h2>
       {children}
     </section>
   );

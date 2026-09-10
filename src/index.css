@@ -14,11 +14,11 @@
 
 /* 자주 쓰는 색을 변수로 모아뒀습니다. 색을 바꾸고 싶을 때 여기 한 곳만 고치면 됩니다. */
 :root {
-  --brand: #dc1655 !important;
-  --bg: #f4f5f7;
+  --brand: #2563eb;
+  --bg: #f4f8ff;
   --text: #1f1f1f;
   --muted: #8a8f98;
-  --line: #eceef1;
+  --line: #dbe3ee;
 }
 
 body {
@@ -43,7 +43,7 @@ h1 {
 
 /* 헤더 안에 시계가 들어오면서 아래 내용과 붙어 보이지 않도록 여백을 줍니다. */
 header {
-  margin-bottom: 16px;
+  margin-bottom: 0;
 }
 
 header h1 {
@@ -52,9 +52,10 @@ header h1 {
 
 /* ! important로 먼저 오도록 할 수 있다. 하지만 권장되지 않음. */
 .card {
-  background: #ec3838;
+  background: #ffffff;
   border-radius: 16px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid #dbe3ee;
+  box-shadow: 0 4px 14px rgba(31, 65, 114, 0.07);
   padding: 20px;
   margin-bottom: 12px;
 }
@@ -98,9 +99,11 @@ header h1 {
 
 /* 맨 위 총 자산 카드 */
 .total {
-  background: var(--brand);
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
   color: #ffffff;
   border-radius: 16px;
+  border: 1px solid #1d4ed8;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.2);
   padding: 20px;
   margin-bottom: 20px;
 }
@@ -114,6 +117,16 @@ header h1 {
   color: #ffffff;
 }
 
+.total .toolbar {
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+
+.total .btn-ghost {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
 /* 거래 내역 한 줄 */
 .tx-row {
   display: flex;
@@ -123,8 +136,13 @@ header h1 {
   border-bottom: 1px solid var(--line);
 }
 
+.tx-row:first-of-type {
+  border-top: 1px solid var(--line);
+  border-radius: 16px 16px 0 0;
+}
+
 .tx-row:last-child {
-  border-bottom: none;
+  border-radius: 0 0 16px 16px;
 }
 
 .amount-in {
@@ -139,8 +157,13 @@ header h1 {
 .toolbar {
   display: flex;
   gap: 8px;
-  justify-content: flex-end;
+  justify-content: flex-start;
   margin-bottom: 12px;
+}
+
+.toolbar .btn {
+  padding: 7px 10px;
+  font-size: 12px;
 }
 
 /* S4: 계좌 카드 안 버튼들이 들어가는 영역 */
@@ -177,12 +200,22 @@ header h1 {
 .chips {
   display: flex;
   gap: 6px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow-x: auto;
   margin-bottom: 10px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  touch-action: pan-x;
+}
+
+.chips::-webkit-scrollbar {
+  display: none;
 }
 
 /* 필터 칩 하나 */
 .chip {
+  flex: 0 0 auto;
+  white-space: nowrap;
   background: #ffffff;
   border: 1px solid var(--line);
   border-radius: 999px;
@@ -205,3 +238,34 @@ header h1 {
   color: var(--muted);
   margin-bottom: 8px;
 }
+
+.field {
+  margin-bottom: 12px;
+}
+
+.field label {
+  display: block;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.field input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.field input:focus {
+  outline: 3px solid rgba(37, 99, 235, 0.15);
+  border-color: #93b4ed;
+}
+
+.error {
+  color: #d93025;
+  font-size: 13px;
+}
+

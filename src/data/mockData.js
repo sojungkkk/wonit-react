@@ -7,7 +7,7 @@ export const accounts = [
     accountType: "입출금",
     balance: 1523000,
     status: "정상",
-    ownerName: "김연지",
+    ownerName: "김소정",
   },
   {
     accountId: 2,
@@ -15,7 +15,7 @@ export const accounts = [
     accountType: "적금",
     balance: 1200000,
     status: "정상",
-    ownerName: "김연지",
+    ownerName: "김소정",
   },
   {
     accountId: 3,
@@ -23,7 +23,7 @@ export const accounts = [
     accountType: "적금",
     balance: 397000,
     status: "휴면",
-    ownerName: "김연지",
+    ownerName: "김소정",
   },
   {
     accountId: 4,
@@ -31,7 +31,7 @@ export const accounts = [
     accountType: "입출금",
     balance: 850000,
     status: "정상",
-    ownerName: "김연지",
+    ownerName: "김소정",
   },
 ]
 

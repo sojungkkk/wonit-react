@@ -62,7 +62,7 @@ function TransferForm({ fromAccount, onTransfer }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="transfer-box" onSubmit={handleSubmit}>
       <div className="field">
         <label>받는 계좌</label>
         <input

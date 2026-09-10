@@ -20,6 +20,6 @@ function Clock() {
     return () => clearInterval(id);   // 정리 함수
   }, []);
 
-  return <span className="muted">{now.toLocaleTimeString("ko-KR")}</span>;
+  return <span className="clock muted">현재 시간은 {now.toLocaleTimeString("ko-KR")} 입니다</span>;
 }
 export default Clock

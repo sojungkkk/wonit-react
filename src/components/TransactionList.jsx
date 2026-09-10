@@ -14,7 +14,7 @@ const CATEGORY_OPTIONS = [
   "의료",
   "통신",
 ]
-function TransactionList({ transactions, showAmount }) {
+function TransactionList({ transactions, hideAmount }) {
   // data 변수에 transcations [{ }, { }] 전체 리턴받음 
   // const { data, loading, error, reload } = useFetch(fetchTransactions); // 함수 안에서 불러서 사용하는 함수를 CallBack
   const [typeFilter, setTypeFilter] = useState("전체")
@@ -73,13 +73,19 @@ function TransactionList({ transactions, showAmount }) {
         총 {visibleTransactions.length}건 · 합계 {formatWon(totalAmount)}
       </div>
 
-      {visibleTransactions.map((tx) => (
-        <TransactionRow
-          key={tx.txId}
-          {...tx}
-          hideAmount={showAmount}
-        />
-      ))}
+      <div className="transaction-list">
+        {visibleTransactions.length === 0 ? (
+          <p className="transaction-empty">거래 내역이 없습니다</p>
+        ) : (
+          visibleTransactions.map((tx) => (
+            <TransactionRow
+              key={tx.txId}
+              {...tx}
+              hideAmount={hideAmount}
+            />
+          ))
+        )}
+      </div>
     </>
   )
 }

@@ -1,9 +1,7 @@
 // 2. 함수: 여러 컴포넌트에서 재사용하기 위해 밖으로 뺀다.
 //          일반 함수와 함수형 컴포넌트의 문법이 같아 헷갈리는 경우도 막을 수 있다.
-
 // export 키워드로 외부에서 불러올 수 있게 
 // 계좌 잔액을 "1,523,000원" 형태의 문자열로 바꿔주는 함수
-
 
 export function formatWon(amount) {
   return amount.toLocaleString("ko-KR") + "원"

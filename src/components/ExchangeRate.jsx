@@ -36,9 +36,40 @@ import { fetchUsdKrw } from '../api/exchange'
 function ExchangeRate() {
   const { data: rate, loading, error, reload } = useFetch(fetchUsdKrw); // 함수 안에서 불러서 사용하는 함수를 CallBack
 
-  if (loading) return <p className="muted">환율을 불러오는 중...</p>;
-  if (error) return <button className="btn" onClick={reload}>다시 시도</button>;
-  return <p>1달러 = {Math.round(rate).toLocaleString("ko-KR")}원</p>;
+  if (loading) {
+    return (
+      <div className="exchange-card exchange-card-loading" aria-busy="true">
+        <span className="exchange-label">USD / KRW</span>
+        <p className="exchange-loading-text">환율을 불러오는 중...</p>
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div className="exchange-card exchange-card-error" role="alert">
+        <div>
+          <span className="exchange-label">USD / KRW</span>
+          <p className="exchange-error-text">환율을 불러오지 못했어요.</p>
+        </div>
+        <button className="exchange-retry" onClick={reload}>다시 시도</button>
+      </div>
+    )
+  }
+
+  return (
+    <div className="exchange-card">
+      <div className="exchange-card-header">
+        <span className="exchange-label">USD / KRW</span>
+        <span className="exchange-status">기준 환율</span>
+      </div>
+      <div className="exchange-value-row">
+        <strong className="exchange-value">{Math.round(rate).toLocaleString("ko-KR")}</strong>
+        <span className="exchange-unit">원</span>
+      </div>
+      <p className="exchange-caption">1 USD 기준 · 미국 달러</p>
+    </div>
+  )
 }
 
 export default ExchangeRate;
